@@ -4,7 +4,7 @@ import React from 'react'
 export default class InputText extends React.Component {
   render() {
     const {
-      divId, name, labelText, type, placeholder, stateText,
+      divId, name, labelText, type, placeholder, stateText, onChange,
     } = this.props
 
     return (
@@ -16,6 +16,7 @@ export default class InputText extends React.Component {
             placeholder={placeholder}
             name={name}
             value={stateText}
+            onChange={onChange}
           />
         </label>
       </div>

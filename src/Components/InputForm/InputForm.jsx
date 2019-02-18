@@ -32,6 +32,10 @@ export default class InputForm extends React.Component {
       <div id="login-form">
         <form>
           {/* Username Input */}
+          {/* 3: stateText === HTML value */}
+          {/*
+            3: Added onChange inside InputForm and InputText
+          */}
           <InputText
             divId="username-input"
             labelText="Username"
@@ -39,6 +43,7 @@ export default class InputForm extends React.Component {
             placeholder="jen@email.com"
             name="username"
             stateText={enteredInput}
+            onChange={this.inputStateHandler}
           />
 
           <button type="submit">Log In</button>
