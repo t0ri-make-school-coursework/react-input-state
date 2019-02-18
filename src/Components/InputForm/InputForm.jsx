@@ -7,18 +7,26 @@ export default class InputForm extends React.Component {
     super(props)
 
     this.state = {
-      enteredUsername: null,
+      enteredInput: null,
     }
+
+    // 2: Binding
+    // Bind handler function to `this`
+    this.inputStateHandler = this.inputStateHandler.bind(this);
   }
 
-  usernameStateHandler(value) {
+  // 2: Set State Handler
+  // Use a function to contain `setState`
+  // Set the state to event.target.value
+  // event.target.value is passed through params
+  inputStateHandler(event) {
     this.setState({
-      enteredUsername: value,
+      enteredInput: event.target.value
     })
   }
 
   render() {
-    let { enteredUsername } = this.state
+    let { enteredInput } = this.state
 
     return (
       <div id="login-form">
@@ -30,7 +38,7 @@ export default class InputForm extends React.Component {
             type="text"
             placeholder="jen@email.com"
             name="username"
-            stateText={enteredUsername}
+            stateText={enteredInput}
           />
 
           <button type="submit">Log In</button>
